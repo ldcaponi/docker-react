@@ -1,0 +1,11 @@
+FROM node:alpine
+
+# The linux directory that the code will live in
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
